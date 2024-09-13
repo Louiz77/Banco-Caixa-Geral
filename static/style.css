@@ -1,0 +1,338 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+main {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 0px 80px 80px 80px;
+}
+
+.navbar {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(227,226,226,1) 65%);
+  }
+  
+.bottombar ul {
+    background-color: #aaaaaa;
+    display: flex;
+    list-style: none;
+  }
+  
+.bottombar li {
+    padding-left: 1%;
+    padding-right: 1%;
+    font-weight: 700;
+    font-size: 0.7em;
+  }
+  .bottombar li:hover {
+    background-color: #336699;
+  }
+.bottombar a {
+    text-decoration: none;
+    color: white;
+  }
+.navbar img{
+    width: 10%;
+
+}
+.welcomeMessage {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0066b3;
+  }
+.fraud-alert {
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.fraud-alert img {
+    max-width: 1100px;
+    overflow: hidden;
+    height: auto;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.password-guidelines {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+  }
+  
+.password-guidelines h4 {
+margin-bottom: 10px;
+color: #333;
+}
+
+.password-guidelines ul {
+list-style-type: none;
+padding-left: 0;
+}
+
+.password-guidelines li {
+margin-bottom: 5px;
+color: #666;
+transition: color 0.3s ease;
+}
+
+.password-guidelines li.valid {
+color: #28a745;
+}
+
+.password-guidelines li.valid::before {
+content: '✓ ';
+color: #28a745;
+}
+
+.password-guidelines li.invalid::before {
+content: '✗ ';
+color: #dc3545;
+}
+.services {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.service-box {
+    width: calc(33.33% - 0.4em);
+    margin-bottom: 20px;
+    background-color: white;
+    overflow: hidden;
+}
+
+.service-box h3 {
+    background-color: #336699;
+    color: white;
+    padding: 5px;
+    margin-bottom: 3px;
+    font-size: 0.6em;
+}
+.service-box img {
+    width: 100%;
+    height: auto;
+}
+.service-box p, .service-box a {
+    font-size: 0.7em;
+    padding: 10px;
+}
+.service-box a {
+    color: #336699;
+    text-decoration: none;
+    display: block;
+}
+.email-verification {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+.email-verification .mainDiv,
+.alter-pass .mainDiv {
+background-color: #ffffff;
+border-radius: 5px;
+padding: 20px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.email-verification .cardStyle,
+.alter-pass .cardStyle {
+max-width: 500px;
+margin: 0 auto;
+}
+
+.email-verification .formTitle,
+.alter-pass .formTitle {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.email-verification .inputDiv,
+.alter-pass .inputDiv {
+margin-bottom: 15px;
+}
+
+.email-verification .inputDiv input,
+.alter-pass .inputDiv input {
+width: 100%;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+
+.email-verification .buttonWrapper,
+.alter-pass .buttonWrapper {
+text-align: center;
+}
+
+.email-verification .submitButton,
+.alter-pass .submitButton {
+background-color: #0066b3;
+color: white;
+border: none;
+padding: 10px 20px;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.email-verification .error,
+.alter-pass .error {
+color: red;
+font-size: 0.8em;
+margin-top: 5px;
+}
+.alter-pass {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.mainDiv {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.cardStyle {
+    max-width: 500px;
+    margin: 0 auto;
+}
+.formTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.inputDiv {
+    margin-bottom: 15px;
+}
+.inputDiv input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.buttonWrapper {
+    text-align: center;
+}
+.submitButton {
+    background-color: #0066b3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+footer {
+    background-color: white;
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-top: 1rem;
+    text-align: center;
+}
+.footer-links ul {
+    list-style-type:none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer-links ul li {
+    margin: 0 10px;
+}
+.footer-links ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+.footer-links p {
+    margin: 10px;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    font-size: 0.6em;
+    list-style-type:none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .cpf-cnpj-container {
+        margin-top: 10px;
+    }
+    .menu ul {
+        flex-direction: column;
+    }
+    .menu ul li {
+        margin: 5px 0;
+    }
+    .service-box {
+        width: 100%;
+    }
+    .fraud-alert {
+        flex-direction: column;
+        text-align: center;
+    }
+    .fraud-alert img {
+        max-width: 420px;
+        overflow: hidden;
+        height: auto;
+        border: 1px solid #333;
+        border-radius: 15px;
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+    padding-top: 0.5rem;
+  }
+  nav li {
+    padding: 0.5rem 0;
+  }
+  .fraud-alert img {
+    max-width: 420px;
+    overflow: hidden;
+    height: auto;
+    border: 1px solid #333;
+    border-radius: 15px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+}

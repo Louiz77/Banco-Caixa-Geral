@@ -311,6 +311,16 @@ footer {
         align-items: center;
         flex-wrap: wrap;
     }
+    .footer-links p {
+        margin: 12px;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 0.6em;
+        list-style-type:none;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 @media only screen and (max-width: 600px) {
   nav {
@@ -324,7 +334,7 @@ footer {
     padding: 0.5rem 0;
   }
   .fraud-alert img {
-    max-width: 420px;
+    max-width: 320px;
     overflow: hidden;
     height: auto;
     border: 1px solid #333;
@@ -332,6 +342,16 @@ footer {
     margin-bottom: 5px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+}
+.footer-links p {
+    margin: 12px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 0.6em;
+    list-style-type:none;
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 }

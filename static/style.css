@@ -344,6 +344,16 @@ footer {
         justify-content: center;
         flex-wrap: wrap;
     }
+    .toggle-password {
+        position: absolute;
+        right: 10px; /* Ajuste a posição horizontal */
+        top: 50%;
+        transform: translateY(-50%); /* Centraliza verticalmente */
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
+    }
 }
 @media only screen and (max-width: 690px) {
     nav {
@@ -387,5 +397,15 @@ footer {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
+    }
+    .toggle-password {
+        position: absolute;
+        right: 10px; /* Ajuste a posição horizontal */
+        top: 50%;
+        transform: translateY(-50%); /* Centraliza verticalmente */
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.2em;
     }
 }

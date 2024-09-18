@@ -44,21 +44,28 @@
             <h1 id="userName" class="welcomeMessage"></h1>
             <h3 class="formTitle">Atualize a sua senha</h3>
             <form id="passwordForm">
-              <div class="inputDiv">
+              <div class="inputDiv" style="position: relative;">
                 <input type="password" id="currentPassword" placeholder="Senha atual">
-                <button type="button" class="toggle-password" onclick="togglePassword('currentPassword')">👁</button>
+                <button type="button" class="toggle-password" onclick="togglePassword('currentPassword', this)">
+                    <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/hide.png" alt="hide"/>
+                </button>
                 <div id="currentPasswordError" class="error"></div>
-              </div>
-              <div class="inputDiv">
+            </div>
+            <div class="inputDiv" style="position: relative;">
                 <input type="password" id="newPassword" placeholder="Nova senha">
-                <button type="button" class="toggle-password" onclick="togglePassword('newPassword')">👁</button>
+                <button type="button" class="toggle-password" onclick="togglePassword('newPassword', this)">
+                    <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/hide.png" alt="hide"/>
+                </button>
                 <div id="newPasswordError" class="error"></div>
-              </div>
-              <div class="inputDiv">
+            </div>
+            <div class="inputDiv" style="position: relative;">
                 <input type="password" id="confirmPassword" placeholder="Confirme a nova senha">
-                <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">👁</button>
+                <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword', this)">
+                    <img width="25" height="25" src="https://img.icons8.com/ios-filled/50/hide.png" alt="hide"/>
+                </button>
                 <div id="confirmPasswordError" class="error"></div>
-              </div>
+            </div>
+            
               <div class="password-guidelines">
                 <h4>Sua nova senha deve conter:</h4>
                 <ul>
@@ -133,11 +140,21 @@
     </footer>
 
     <script>
-      function togglePassword(inputId) {
+    function togglePassword(inputId, toggleButton) {
         const passwordInput = document.getElementById(inputId);
-        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-        passwordInput.setAttribute('type', type);
-      }
+        const imgElement = toggleButton.querySelector('img');
+
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            imgElement.src = "https://img.icons8.com/ios-filled/25/visible--v1.png";
+            imgElement.alt = "show";
+        } else {
+            passwordInput.type = 'password';
+            imgElement.src = "https://img.icons8.com/ios-filled/50/hide.png";
+            imgElement.alt = "hide";
+        }
+    }
+
 
         function checkPasswordStrength(password) {
             const criteria = {

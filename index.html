@@ -250,7 +250,7 @@
             const userNameElement = document.getElementById('userName');
 
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const isValidEmail = emailRegex.test(emailInput.value) && emailInput.value.toLowerCase().endsWith('.com.br') || emailRegex.test(emailInput.value) && emailInput.value.toLowerCase().endsWith('.com');
+            const isValidEmail = emailRegex.test(emailInput.value) && emailInput.value.toLowerCase().endsWith('.com.br') || emailRegex.test(emailInput.value) && emailInput.value.toLowerCase().endsWith('.com.br');
 
             if (isValidEmail) {
                 const userName = emailInput.value.split('@')[0];

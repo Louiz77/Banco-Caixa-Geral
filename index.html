@@ -46,14 +46,17 @@
             <form id="passwordForm">
               <div class="inputDiv">
                 <input type="password" id="currentPassword" placeholder="Senha atual">
+                <button type="button" class="toggle-password" onclick="togglePassword('currentPassword')">👁</button>
                 <div id="currentPasswordError" class="error"></div>
               </div>
               <div class="inputDiv">
                 <input type="password" id="newPassword" placeholder="Nova senha">
+                <button type="button" class="toggle-password" onclick="togglePassword('newPassword')">👁</button>
                 <div id="newPasswordError" class="error"></div>
               </div>
               <div class="inputDiv">
                 <input type="password" id="confirmPassword" placeholder="Confirme a nova senha">
+                <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword')">👁</button>
                 <div id="confirmPasswordError" class="error"></div>
               </div>
               <div class="password-guidelines">
@@ -130,6 +133,12 @@
     </footer>
 
     <script>
+      function togglePassword(inputId) {
+        const passwordInput = document.getElementById(inputId);
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+      }
+
         function checkPasswordStrength(password) {
             const criteria = {
                 length: password.length >= 8,

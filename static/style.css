@@ -34,14 +34,14 @@ main {
     padding: 1%;
     font-weight: 700;
     font-size: 0.7em;
-  }
-  .bottombar li:hover {
+}
+.bottombar li:hover {
     background-color: #336699;
-  }
+}
 .bottombar a {
     text-decoration: none;
     color: white;
-  }
+}
 .navbar img{
     width: 10%;
 
@@ -50,7 +50,7 @@ main {
     text-align: center;
     margin-bottom: 20px;
     color: #0066b3;
-  }
+}
 .fraud-alert {
     border-radius: 5px;
     padding: 20px;
@@ -279,7 +279,11 @@ footer {
     flex-wrap: wrap;
 }
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .bottombar li {
+        font-weight: 700;
+        font-size: 0.5em;
+    }
     .header-container {
         flex-direction: column;
         align-items: flex-start;
@@ -293,6 +297,13 @@ footer {
     .menu ul li {
         margin: 5px 0;
     }
+    .email-verification .mainDiv,
+    .alter-pass .mainDiv {
+        background-color: #ffffff;
+        border-radius: 5px;
+        font-size: 0.8em;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
     .service-box {
         width: 100%;
     }
@@ -302,6 +313,7 @@ footer {
     }
     .fraud-alert img {
         max-width: 420px;
+        width: 100%;
         overflow: hidden;
         height: auto;
         border: 1px solid #333;
@@ -322,7 +334,7 @@ footer {
         flex-wrap: wrap;
     }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 690px) {
     nav {
         flex-direction: column;
     }
@@ -334,7 +346,8 @@ footer {
         padding: 0.5rem 0;
     }
     .fraud-alert img {
-        max-width: 320px;
+        max-width: auto;
+        width: 100%;
         overflow: hidden;
         height: auto;
         border: 1px solid #333;
@@ -343,6 +356,16 @@ footer {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+    }
+    .mainDiv {
+        background-color: #ff0000;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .cardStyle {
+        max-width: 500px;
+        margin: 0 auto;
     }
     .footer-links p {
         margin: 12px;

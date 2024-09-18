@@ -346,9 +346,9 @@ footer {
     }
     .toggle-password {
         position: absolute;
-        right: 10px; /* Ajuste a posição horizontal */
+        right: 10px;
         top: 50%;
-        transform: translateY(-50%); /* Centraliza verticalmente */
+        transform: translateY(-50%);
         background: none;
         border: none;
         cursor: pointer;

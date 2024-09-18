@@ -312,11 +312,11 @@ footer {
         text-align: center;
     }
     .fraud-alert img {
-        max-width: 420px;
+        max-width: auto;
         width: 100%;
         overflow: hidden;
         height: auto;
-        border: 1px solid #333;
+        border: 1px solid transparent;
         border-radius: 15px;
         margin-bottom: 5px;
         display: flex;
@@ -350,7 +350,7 @@ footer {
         width: 100%;
         overflow: hidden;
         height: auto;
-        border: 1px solid #333;
+        border: 1px solid transparent;
         border-radius: 15px;
         margin-bottom: 5px;
         display: flex;
